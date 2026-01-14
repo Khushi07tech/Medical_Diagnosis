@@ -1,7 +1,7 @@
 from models.diagnosis_system import DiagnosisSystem
 def main ():
     system = DiagnosisSystem()
-
+    system.load_diseases()
     print ("-----Medical Diagnosis Assistant-----")
     user_name = input ("Enter your name: ").title()
     print(f"Welcome {user_name}")

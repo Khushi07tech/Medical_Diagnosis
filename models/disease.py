@@ -19,11 +19,15 @@ class Disease:
         print("-" * 25)
 
     def check_symptoms(self, user_symptoms):
-        symptoms_match = 0
-        for user_symptom in user_symptoms:
-            if user_symptom in self.common_symptoms:
-                symptoms_match += 1
-        return (symptoms_match / len (self.common_symptoms) * 100)
+        disease_symptoms = [s.strip().lower() for s in self.common_symptoms]
+        user_symptoms = [s.strip().lower() for s in user_symptoms]
+
+        symptoms_match = sum(1 for s in user_symptoms if s in disease_symptoms)
+
+        if not disease_symptoms:
+            return 0
+
+        return symptoms_match/len(disease_symptoms) * 100
 
     def get_recommendation(self):
         if self.severity == "Mild":

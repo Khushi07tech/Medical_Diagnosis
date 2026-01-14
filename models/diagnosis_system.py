@@ -34,7 +34,7 @@ class DiagnosisSystem:
 
         print ("=====DIAGNOSIS=====")
 
-        for result in results[:3]:
+        for result in results[:2]:
 
            disease = result ['disease']
            percentage = result['match_percentage']
